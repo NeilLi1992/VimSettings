@@ -26,6 +26,7 @@ Plugin 'elzr/vim-json'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -100,6 +101,9 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+set incsearch " use increment search by default
+set hlsearch " highlight the search by default
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,21 +112,24 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+set scrolloff=10 " always keep 10 lines of context around the cursor when scrolling
 
 """"""""""""""
 " Key mappings
 """"""""""""""
-map T :NERDTreeToggle<CR>
+" nmap T :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 """"""""""""""
 " Misc
 """"""""""""""
-set mouse=a
+set mouse=a " enable use of mouse in vim
 :command FormatJSON %!python -m json.tool " Define a command for formatting JSON
+:command Fold :setlocal foldmethod=syntax
 ":command SyntaxFold :setlocal foldmethod=syntax<CR>
 autocmd BufWritePre * :%s/\s\+$//e " Automatically remove trailing whitespaces when :w
 
 set nobackup "no backup files
 set nowritebackup " don't want a backup file while editing
 set noswapfile
+set conceallevel=0  " show vertical bars for hyperlinks in manual
