@@ -27,6 +27,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -117,7 +118,7 @@ set scrolloff=10 " always keep 10 lines of context around the cursor when scroll
 """"""""""""""
 " Key mappings
 """"""""""""""
-" nmap T :NERDTreeToggle<CR>
+nmap T :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 """"""""""""""
